@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kelime Bilgisi Testi</title>
+<style>
+:root{--bg:#f7f7f4;--card:#fff;--tx:#1d1f22;--mut:#666b73;--bd:#d9dbdf;--g:#d8f2de;--gb:#1e8a3c;--y:#fff1bd;--yb:#9a6d00;--r:#fadadb;--rb:#c62d37;--n:#ececee;--ac:#2557d6;--acx:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161a;--card:#1e2126;--tx:#eceef1;--mut:#9aa0a8;--bd:#343840;--g:#1d4a2b;--gb:#5fd081;--y:#54430c;--yb:#f0c344;--r:#55232a;--rb:#ff7a84;--n:#2a2d33;--ac:#7fa4ff;--acx:#0b1020}}
+:root[data-theme="dark"]{--bg:#14161a;--card:#1e2126;--tx:#eceef1;--mut:#9aa0a8;--bd:#343840;--g:#1d4a2b;--gb:#5fd081;--y:#54430c;--yb:#f0c344;--r:#55232a;--rb:#ff7a84;--n:#2a2d33;--ac:#7fa4ff;--acx:#0b1020}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:18px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-bottom:2px solid var(--bd);background:var(--card)}
+h1{font-size:20px;margin:0}
+h2{font-size:22px;margin:0 0 10px}
+main{max-width:800px;margin:0 auto;padding:18px 16px 40px}
+main.t{padding-bottom:190px}
+p{margin:0 0 12px}
+.mut{color:var(--mut);font-size:16px}
+.btn{font:inherit;font-weight:700;min-height:50px;padding:12px 20px;border-radius:12px;border:2px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer}
+.btn.p{background:var(--ac);border-color:var(--ac);color:var(--acx)}
+.btn.d{color:var(--rb);min-height:44px;padding:8px 14px}
+.btn.s{min-height:44px;padding:8px 14px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}
+textarea{width:100%;min-height:200px;font:inherit;padding:12px;border-radius:12px;border:2px solid var(--bd);background:var(--card);color:var(--tx)}
+.msg{color:var(--rb);font-weight:700;margin:10px 0}
+.leg{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{padding:6px 12px;border-radius:10px;border:2px solid;font-weight:700;font-size:16px}
+.k0{background:var(--n);border-color:var(--bd)}.k1{background:var(--g);border-color:var(--gb);color:var(--gb)}.k2{background:var(--y);border-color:var(--yb);color:var(--yb)}.k3{background:var(--r);border-color:var(--rb);color:var(--rb)}
+#text{font-size:22px;line-height:2.4;white-space:pre-wrap;overflow-wrap:anywhere}
+.w{padding:.14em .24em;border-radius:8px;border:2px solid transparent;background:var(--n);cursor:pointer;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+.w[data-s="1"]{background:var(--g);border-color:var(--gb)}
+.w[data-s="2"]{background:var(--y);border-color:var(--yb)}
+.w[data-s="3"]{background:var(--r);border-color:var(--rb)}
+.w::after{font-size:.62em;font-weight:800;margin-left:.2em;vertical-align:super}
+.w[data-s="1"]::after{content:"✓";color:var(--gb)}
+.w[data-s="2"]::after{content:"?";color:var(--yb)}
+.w[data-s="3"]::after{content:"✗";color:var(--rb)}
+#bar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:2px solid var(--bd);padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px))}
+.in{max-width:800px;margin:0 auto}
+.cs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.c{border-radius:10px;border:2px solid;padding:4px 2px;text-align:center;font-weight:800;font-size:22px;line-height:1.2}
+.c small{display:block;font-size:12px;font-weight:700}
+.bt{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+.card{border-radius:16px;border:3px solid;padding:16px;text-align:center}
+.card .n{font-size:56px;font-weight:800;line-height:1.1}
+.card .pc{font-size:30px;font-weight:700}
+.card .lb{font-size:18px;font-weight:700}
+.tot{font-size:26px;font-weight:800;text-align:center;margin:10px 0}
+.h{background:var(--card);border:2px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:12px}
+.h b{display:block;margin-bottom:4px;overflow-wrap:anywhere}
+.hs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:20px;z-index:9}
+#modal div{background:var(--card);border-radius:16px;padding:20px;max-width:420px;width:100%}
+:root{--bg:#eef1f8;--card:#fff;--bd:#d8deee;--tx:#14192b;--mut:#5d6785;--ac:#4766f0;--acx:#fff;--hd:#e3e9fb}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0f1d;--card:#0f1628;--bd:#222d4a;--tx:#e9edfa;--mut:#8e9bbf;--ac:#5b7cfa;--acx:#fff;--hd:#111c3a;--n:#1a2338;--g:#14442c;--gb:#4fd38a}}
+:root[data-theme="dark"]{--bg:#0a0f1d;--card:#0f1628;--bd:#222d4a;--tx:#e9edfa;--mut:#8e9bbf;--ac:#5b7cfa;--acx:#fff;--hd:#111c3a;--n:#1a2338;--g:#14442c;--gb:#4fd38a}
+header{position:relative;overflow:hidden;padding:18px 20px;background:radial-gradient(circle at 80% 0,var(--hd),transparent 60%),var(--bg);border-bottom:1px solid var(--bd)}
+.brand{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+.brand>svg{width:46px;height:46px;flex:none}
+.brand h1{font-size:24px;line-height:1.2}
+.brand p{margin:2px 0 0;font-size:15px;color:var(--mut)}
+.fox{position:absolute;right:190px;bottom:0;width:88px}
+@media(max-width:760px){.fox{display:none}}
+.btn{border-radius:14px}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.s{display:inline-flex;align-items:center;gap:8px;position:relative;z-index:1}
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:22px}
+.step{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.step h2{margin:0 0 2px}.step p{margin:0}
+.num{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:#2fa866}
+.num.b{background:#5b7cfa}
+.up{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:28px}
+.drop{flex:1 1 380px;display:flex;align-items:center;gap:16px;padding:18px;border:2px dashed var(--ac);border-radius:16px;cursor:pointer}
+.drop.on{background:var(--hd)}
+.drop>svg{width:46px;height:46px;color:var(--ac);flex:none}
+.drop b{display:block}
+.drop .bw{margin-left:auto}
+.safe{display:flex;align-items:center;gap:10px;color:var(--gb);font-size:15px;max-width:200px;padding-left:16px;border-left:1px solid var(--bd)}
+.safe svg{width:32px;height:32px;flex:none}
+#paste{border-width:1px;border-radius:16px;background:transparent;min-height:190px}
+.cc{text-align:right;margin:6px 4px 14px}
+#go{display:inline-flex;align-items:center;gap:12px;border:0;border-radius:999px;padding:14px 38px;background:linear-gradient(135deg,#4666f2,#6b82ff);color:#fff;box-shadow:0 8px 24px rgba(91,124,250,.35)}
+#go svg{width:18px;height:18px}
+@media(max-width:600px){.safe{border:0;padding:0;max-width:none}.drop .bw{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5c3-1.2 7-1.2 10 1v14c-3-2.2-7-2.2-10-1z" fill="#4a6cf7"/><path d="M22 5c-3-1.2-7-1.2-10 1v14c3-2.2 7-2.2 10-1z" fill="#7b95ff"/></svg>
+    <div><h1>Kelime Bilgisi Testi</h1><p>Metindeki kelimeleri kendi bilginize göre işaretleyin.</p></div>
+  </div>
+  <svg class="fox" viewBox="0 0 120 110" aria-hidden="true"><path d="M92 78c18-4 26-20 22-34-8 6-14 10-24 14z" fill="#d9692a"/><ellipse cx="58" cy="82" rx="26" ry="24" fill="#e8742f"/><ellipse cx="54" cy="88" rx="12" ry="16" fill="#f6e7d8"/><path d="M34 40 30 12l20 14zM82 40l4-28-22 14z" fill="#e8742f"/><ellipse cx="58" cy="46" rx="26" ry="22" fill="#ef7f35"/><path d="M36 50c8 14 36 14 44 0-6 18-38 18-44 0z" fill="#f6e7d8"/><circle cx="48" cy="44" r="3" fill="#2a1a12"/><circle cx="68" cy="44" r="3" fill="#2a1a12"/><ellipse cx="58" cy="54" rx="4" ry="3" fill="#2a1a12"/></svg>
+  <button class="btn s" id="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span id="hbt">Geçmiş</span></button>
+</header>
+
+<main id="v-start"><section class="panel">
+  <div class="step"><span class="num">1</span><div><h2>Metin seç</h2><p class="mut">Metindeki kelimeleri kendi bilginize göre işaretleyin; sonunda kaçını bildiğinizi görün. Dosyanız cihazınızdan dışarı çıkmaz.</p></div></div>
+  <div class="up">
+    <label class="drop" id="drop" for="file">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A6 6 0 0 1 18 9a4.5 4.5 0 0 1 .5 9"/><path d="M12 20v-8M9 15l3-3 3 3"/></svg>
+      <div><b>Dosya seçin veya sürükleyin</b><span class="mut">Desteklenen: .txt, .md, .html, .rtf, .docx, .odt</span></div>
+      <span class="btn s bw">Gözat…</span>
+      <input type="file" id="file" accept=".txt,.md,.html,.htm,.rtf,.docx,.odt" hidden>
+    </label>
+    <div class="safe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="currentColor"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="#0b1020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dosyalarınız cihazınızda kalır.</span></div>
+  </div>
+  <div class="step"><span class="num b">2</span><div><h2>Metni yapıştırın</h2></div></div>
+  <textarea id="paste" placeholder="İngilizce metni buraya yapıştırın…"></textarea>
+  <div class="cc mut"><b id="cc">0</b> karakter</div>
+  <div class="msg" id="err" role="alert"></div>
+  <button class="btn p" id="go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z" fill="currentColor"/></svg>Teste Başla</button>
+</section></main>
+
+<main id="v-test" class="t" hidden>
+  <div class="mut" id="fn"></div>
+  <div class="leg"><span class="chip k0">Gri: işaretsiz</span><span class="chip k1">✓ Biliyorum</span><span class="chip k2">? Bildiğimi düşünüyorum</span><span class="chip k3">✗ Bilmiyorum</span></div>
+  <p class="mut">Bir kelimeye her dokunuşta renk sırayla değişir.</p>
+  <div id="text"></div>
+</main>
+<div id="bar" hidden><div class="in">
+  <div class="cs">
+    <div class="c k1">✓<span id="c1">0</span><small>Biliyorum</small></div>
+    <div class="c k2">?<span id="c2">0</span><small>Düşünüyorum</small></div>
+    <div class="c k3">✗<span id="c3">0</span><small>Bilmiyorum</small></div>
+    <div class="c k0"><span id="c0">0</span><small>İşaretsiz</small></div>
+  </div>
+  <div class="bt"><span class="mut" id="tt"></span><button class="btn p" id="fin">Testi Bitir</button></div>
+</div></div>
+
+<main id="v-result" hidden>
+  <h2>Sonuç</h2>
+  <div class="mut" id="rf"></div>
+  <div class="tot" id="rt"></div>
+  <div class="grid" id="rg"></div>
+  <p class="mut" id="ru"></p>
+  <div class="row"><button class="btn p" id="back">Teste Dön</button><button class="btn" id="new">Yeni Test</button></div>
+</main>
+
+<main id="v-history" hidden>
+  <h2>Geçmiş</h2>
+  <div id="hl"></div>
+  <div class="row"><button class="btn d" id="hall">Hepsini Sil</button></div>
+</main>
+
+<div id="modal" hidden><div><p id="mm"></p><div class="row"><button class="btn d" id="yes">Sil</button><button class="btn" id="no">Vazgeç</button></div></div></div>
+
+<script>
+"use strict";
+const $=s=>document.querySelector(s);
+const KEY='kelimeTesti.gecmis';
+let mem=[];
+const st={marks:new Map(),els:new Map(),file:null,id:null,view:'start',from:'start'};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function load(){try{const v=JSON.parse(localStorage.getItem(KEY)||'[]');if(Array.isArray(v)){mem=v;return v}}catch(e){}return mem}
+function save(a){mem=a;try{localStorage.setItem(KEY,JSON.stringify(a))}catch(e){}}
+
+function show(v){
+  if(v==='history'&&st.view!=='history')st.from=st.view;
+  st.view=v;
+  for(const n of ['start','test','result','history'])$('#v-'+n).hidden=n!==v;
+  $('#bar').hidden=v!=='test';
+  $('#hbt').textContent=v==='history'?'Geri':'Geçmiş';
+  if(v==='history')renderHistory();
+  window.scrollTo(0,0);
+}
+$('#hb').onclick=()=>show(st.view==='history'?st.from:'history');
+
+function err(m){$('#err').textContent=m||''}
+
+/* ---- dosya okuma ---- */
+async function zipGet(buf,name){
+  if(typeof DecompressionStream==='undefined')throw new Error('ds');
+  const dv=new DataView(buf),u=new Uint8Array(buf),dec=new TextDecoder();
+  let e=-1;
+  for(let i=buf.byteLength-22;i>=Math.max(0,buf.byteLength-65600);i--){if(dv.getUint32(i,true)===0x06054b50){e=i;break}}
+  if(e<0)throw new Error('zip');
+  const n=dv.getUint16(e+10,true);let p=dv.getUint32(e+16,true);
+  for(let k=0;k<n;k++){
+    if(dv.getUint32(p,true)!==0x02014b50)throw new Error('zip');
+    const m=dv.getUint16(p+10,true),cs=dv.getUint32(p+20,true),nl=dv.getUint16(p+28,true),el=dv.getUint16(p+30,true),cl=dv.getUint16(p+32,true),lo=dv.getUint32(p+42,true);
+    if(dec.decode(u.subarray(p+46,p+46+nl))===name){
+      const ds=lo+30+dv.getUint16(lo+26,true)+dv.getUint16(lo+28,true),d=u.subarray(ds,ds+cs);
+      if(m===0)return dec.decode(d);
+      return await new Response(new Blob([d]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).text();
+    }
+    p+=46+nl+el+cl;
+  }
+  throw new Error('zip');
+}
+function xmlText(x,tags){
+  const d=new DOMParser().parseFromString(x,'application/xml');
+  if(d.getElementsByTagName('parsererror').length)throw new Error('xml');
+  const out=[];
+  for(const el of d.getElementsByTagName('*'))if(tags.includes(el.nodeName))out.push(el.textContent);
+  return out.join('\n');
+}
+function rtfText(s){
+  let o=s;
+  for(let i=0;i<4;i++)o=o.replace(/\{\\(\*|fonttbl|colortbl|stylesheet|info|pict)[^{}]*(\{[^{}]*\}[^{}]*)*\}/g,'');
+  return o.replace(/\\par[d]?\b ?/g,'\n').replace(/\\u(-?\d+)\??/g,(m,c)=>String.fromCharCode(c<0?+c+65536:+c))
+   .replace(/\\'([0-9a-f]{2})/gi,(m,h)=>String.fromCharCode(parseInt(h,16)))
+   .replace(/\\[a-zA-Z]+-?\d* ?/g,'').replace(/[{}]/g,'');
+}
+async function extract(file){
+  const ext=(file.name.split('.').pop()||'').toLowerCase();
+  if(ext==='doc')throw new Error('.doc (eski Word biçimi) desteklenmiyor. Dosyayı Word’de “.docx” olarak kaydedip tekrar deneyin.');
+  if(ext==='pdf')throw new Error('PDF dosyaları desteklenmiyor. Metni kopyalayıp aşağıdaki kutuya yapıştırabilirsiniz.');
+  if(!['txt','md','html','htm','rtf','docx','odt'].includes(ext))throw new Error('Bu dosya türü (.'+ext+') desteklenmiyor. Desteklenenler: .txt .md .html .rtf .docx .odt');
+  const buf=await file.arrayBuffer();
+  try{
+    if(ext==='docx'){
+      const x=(await zipGet(buf,'word/document.xml')).replace(/<w:(tab|br)\b[^>]*\/>/g,' ');
+      return xmlText(x,['w:p']);
+    }
+    if(ext==='odt'){
+      const x=(await zipGet(buf,'content.xml')).replace(/<text:(s|tab)\b[^>]*\/>/g,' ').replace(/<text:line-break\s*\/>/g,' ');
+      return xmlText(x,['text:p','text:h']);
+    }
+    const t=new TextDecoder('utf-8').decode(buf);
+    if(ext==='rtf')return rtfText(t);
+    if(ext==='html'||ext==='htm'){
+      const d=new DOMParser().parseFromString(t,'text/html');
+      d.querySelectorAll('script,style,noscript,template').forEach(e=>e.remove());
+      d.querySelectorAll('p,div,br,li,tr,h1,h2,h3,h4,h5,h6').forEach(e=>e.after('\n'));
+      return d.body?d.body.textContent:'';
+    }
+    return t;
+  }catch(e){
+    throw new Error(e.message==='ds'?'Tarayıcınız docx/odt okumayı desteklemiyor. Lütfen güncel bir tarayıcı kullanın ya da metni yapıştırın.':'Dosya okunamadı. Bozuk olabilir; metni yapıştırmayı deneyin.');
+  }
+}
+$('#file').onchange=async e=>{
+  const f=e.target.files[0];err('');
+  if(!f)return;
+  try{startTest(await extract(f),f.name)}catch(x){err(x.message)}
+  e.target.value='';
+};
+$('#go').onclick=()=>{err('');startTest($('#paste').value,null)};
+
+/* ---- test ---- */
+const RE=/\p{L}+(?:['’]\p{L}+)*/gu;
+function startTest(text,name){
+  const marks=new Map(),els=new Map(),frag=document.createDocumentFragment();
+  let last=0,m;RE.lastIndex=0;
+  while((m=RE.exec(text))){
+    if(m.index>last)frag.append(text.slice(last,m.index));
+    const k=m[0].toLowerCase().replace('’',"'"),sp=document.createElement('span');
+    sp.className='w';sp.dataset.k=k;sp.dataset.s='0';sp.textContent=m[0];
+    frag.append(sp);
+    if(!els.has(k)){els.set(k,[]);marks.set(k,0)}
+    els.get(k).push(sp);last=RE.lastIndex;
+  }
+  if(!marks.size){err('Metinde kelime bulunamadı.');return}
+  if(last<text.length)frag.append(text.slice(last));
+  st.marks=marks;st.els=els;st.file=name;st.id=null;
+  const box=$('#text');box.textContent='';box.append(frag);
+  $('#fn').textContent=name?'Dosya: '+name:'';
+  upd();show('test');
+}
+$('#text').addEventListener('click',e=>{
+  const t=e.target.closest('.w');if(!t)return;
+  const k=t.dataset.k,s=(st.marks.get(k)+1)%4;
+  st.marks.set(k,s);st.els.get(k).forEach(x=>x.dataset.s=s);upd();
+});
+function cnt(){const c=[0,0,0,0];st.marks.forEach(v=>c[v]++);return c}
+function upd(){const c=cnt();c.forEach((n,i)=>$('#c'+i).textContent=n);$('#tt').textContent='Toplam: '+st.marks.size+' kelime'}
+const pct=(n,t)=>t?Math.round(n/t*1000)/10:0;
+
+/* ---- sonuç ---- */
+$('#fin').onclick=()=>{
+  const c=cnt(),t=st.marks.size;
+  const e={id:st.id||Date.now(),ts:new Date().toISOString(),file:st.file,total:t,g:c[1],y:c[2],r:c[3],u:c[0],gp:pct(c[1],t),yp:pct(c[2],t),rp:pct(c[3],t)};
+  st.id=e.id;
+  save([e].concat(load().filter(x=>x.id!==e.id)));
+  $('#rf').textContent=st.file?'Dosya: '+st.file:'';
+  $('#rt').textContent='Toplam: '+t+' kelime';
+  $('#rg').innerHTML=[[1,'✓ Biliyorum',e.g,e.gp],[2,'? Bildiğimi düşünüyorum',e.y,e.yp],[3,'✗ Bilmiyorum',e.r,e.rp]]
+   .map(a=>`<div class="card k${a[0]}"><div class="lb">${a[1]}</div><div class="n">${a[2]}</div><div class="pc">%${a[3]}</div></div>`).join('');
+  $('#ru').textContent=e.u?'İşaretlenmemiş: '+e.u+' kelime (%'+pct(e.u,t)+')':'';
+  show('result');
+};
+$('#back').onclick=()=>show('test');
+$('#new').onclick=()=>{$('#paste').value='';$('#cc').textContent=0;err('');show('start')};
+
+/* ---- geçmiş ---- */
+function ask(msg,ok){
+  $('#mm').textContent=msg;$('#modal').hidden=false;
+  $('#yes').onclick=()=>{$('#modal').hidden=true;ok()};
+  $('#no').onclick=()=>{$('#modal').hidden=true};
+}
+function renderHistory(){
+  const l=load().slice().sort((a,b)=>String(b.ts).localeCompare(String(a.ts)));
+  $('#hall').hidden=!l.length;
+  $('#hl').innerHTML=l.length?l.map(e=>`<div class="h"><b>${esc(new Date(e.ts).toLocaleString('tr-TR'))}</b><div class="mut">${e.file?esc(e.file):'Yapıştırılan metin'} · ${e.total} kelime</div><div class="hs"><span class="chip k1">✓ ${e.g} (%${e.gp})</span><span class="chip k2">? ${e.y} (%${e.yp})</span><span class="chip k3">✗ ${e.r} (%${e.rp})</span></div><button class="btn d" data-id="${e.id}">Sil</button></div>`).join(''):'<p class="mut">Henüz kayıtlı test yok.</p>';
+}
+$('#hl').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-id]');if(!b)return;
+  ask('Bu test kaydı silinsin mi?',()=>{save(load().filter(x=>String(x.id)!==b.dataset.id));renderHistory()});
+});
+$('#hall').onclick=()=>ask('Tüm geçmiş silinsin mi? Bu işlem geri alınamaz.',()=>{save([]);renderHistory()});
+const drop=$('#drop');
+['dragenter','dragover'].forEach(n=>drop.addEventListener(n,e=>{e.preventDefault();drop.classList.add('on')}));
+['dragleave','drop'].forEach(n=>drop.addEventListener(n,e=>{e.preventDefault();drop.classList.remove('on')}));
+drop.addEventListener('drop',async e=>{const f=e.dataTransfer.files[0];err('');if(!f)return;try{startTest(await extract(f),f.name)}catch(x){err(x.message)}});
+$('#paste').addEventListener('input',()=>{$('#cc').textContent=$('#paste').value.length});
+</script>
+</body>
+</html>
